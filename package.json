@@ -1,7 +1,6 @@
 
 {
   "name": "gauge-ts-template",
-  "version": "0.0.1",
   "description": "Starter template for writing TypeScript tests for Gauge",
   "dependencies": {
     "gauge-ts": "0.0.5"
