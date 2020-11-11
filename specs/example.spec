@@ -1,33 +1,53 @@
-# Specification Heading
+# Getting Started with Gauge
 
-This is an executable specification file. This file follows markdown syntax.
-Every heading in this file denotes a scenario. Every bulleted point denotes a step.
+This is an example markdown specification file.
+Every heading in this file is a scenario.
+Every bulleted point is a step.
 
-To execute this specification, run
+To execute this specification, use
+	gauge run specs
 
-    gauge specs
+This is a context step that runs before every scenario
+* Open todo application
 
+## Display number of items
+* Add task "first task"
+* Must display "1 item left"
+* Add task "second task"
+* Must display "2 items left"
 
-* Vowels in English language are "aeiou".
+## Must list only active tasks
+* Add tasks 
 
-## Vowel counts in single word
+   |description|
+   |-----------|
+   |first task |
+   |second task|
+   |third task |
+   |fourth task|
+   |fifth task |
 
-tags: single word
+* Complete tasks 
 
-* The word "gauge" has "3" vowels.
+   |description|
+   |-----------|
+   |second task|
+   |fifth task |
+* View "Active" tasks
+* Must have 
 
+   |description|
+   |-----------|
+   |first task |
+   |third task |
+   |fourth task|
+* Must not have 
 
-## Vowel counts in multiple word
+   |description|
+   |-----------|
+   |second task|
+   |fifth task |
 
-This is the second scenario in this specification
-
-Here's a step that takes a table
-
-* Almost all words have vowels
-     |Word  |Vowel Count|
-     |------|-----------|
-     |Gauge |3          |
-     |Mingle|2          |
-     |Snap  |1          |
-     |GoCD  |1          |
-     |Rhythm|0          |
+A tear down step for every scenario
+___
+* Clear all tasks
