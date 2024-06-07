@@ -30,9 +30,14 @@ jobs:
           zip -r ts.zip ./ts;
           openssl sha256 ts.zip | cut -d " " -f2 > ts.zip.sha256
           version=$(jq -r ".version" metadata.json)
+          echo "Creating release v$version"
           hub release create -m "v$version" "v$version"
+          echo "Created release v$version"
+          hub release show "v$version"
+          echo "Uploading artifacts... ⏳"
           hub release edit -m "" -a ts.zip "v$version"
           hub release edit -m "" -a ts.zip.sha256 "v$version"
+          echo "Done. ✅"
       - name: setup git
         run: |
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
