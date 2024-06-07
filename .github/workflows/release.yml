@@ -33,7 +33,7 @@ jobs:
           echo "Creating release v$version"
           hub release create -m "v$version" "v$version"
           echo "Created release v$version"
-          hub release show "v$version"
+          sleep 5 # wait for the release to be created
           echo "Uploading artifacts... ⏳"
           hub release edit -m "" -a ts.zip "v$version"
           hub release edit -m "" -a ts.zip.sha256 "v$version"
