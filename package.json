@@ -2,12 +2,12 @@
   "name": "gauge-ts-template",
   "description": "Starter template for writing TypeScript tests for Gauge",
   "dependencies": {
-    "gauge-ts": "0.1.1",
-    "ts-node": "^10.4.0",
-    "typescript": "^5.2.2"
+    "gauge-ts": "0.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/node": "latest",
-    "taiko": "^1.0.26"
+    "taiko": "^1.4.0"
   }
 }
